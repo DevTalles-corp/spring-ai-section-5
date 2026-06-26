@@ -32,7 +32,7 @@ public class ChatController {
     }
 
     @PostMapping("/explain")
-    private ResponseEntity<String> explainCondition(@Valid @RequestBody ChatRequest request){
+    public ResponseEntity<String> explainCondition(@Valid @RequestBody ChatRequest request){
         return ResponseEntity.ok(assistantService.explainCondition(request.prompt(), request.model()));
     }
 
